@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bazzar Bandhu Drop</title>
+    <style>
+        body {
+            background-color: #221d1d;
+            color: #f6f6f6;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 5px;
+        }
+
+        .logo span {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .drop-zone {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background-color: #0b0a27;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .drop-zone::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px dashed #4CAF50;
+        }
+
+        /* .drop-zone::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            background-color: #282828;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        } */
+
+        .drop-zone::after img {
+            width: 30px;
+        }
+
+        .drop-zone h3 {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        .drop-zone p {
+            font-size: 1.2rem;
+            margin-top: 5px;
+            text-align: center;
+            
+        }
+
+        .drop-zone .upload-button {
+            background-color: #4CAF50;
+            color: #f6eeee;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .drop-zone .upload-button:hover {
+            background-color: #45a049;
+        }
+
+        .drop-zone.active::before {
+            border-color: #4CAF50;
+        }
+
+        .drop-zone.active::after {
+            background-color: #4CAF50;
+        }
+
+        h1 {
+            font-size: 5.0rem;
+            margin-top: 50px;
+            text-decoration-color: #f4efef;
+        }
+
+        p {
+            font-size: 1.9rem;
+            margin-top: 0px;
+            text-align: center;
+            color: #e6d8d8;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="{{url_for('static', filename = 'img/loginlogo.png')}}" alt="Netlify Logo">
+        <span>Bazzar Bandhu</span>
+    </div>
+
+        {% if message == "success" %}
+        <script>alert("Your file is uploaded successfully!!!")</script>
+        {% elif message == "fail"%}
+        <script>alert("Supported file formats .csv, .xlsx, .xls format")</script>
+        {% endif %}
+        <img src="{{url_for('static', filename = 'img/Fol.jpeg')}}" alt="Folder Icon">
+        <form action="{{url_for('success')}}" method="post" enctype="multipart/form-data">
+            <center><input type="file" name="file" value = "supported file formats .csv, .xlsx, .xls" accept="xlsx csv xls"/></center><br>
+            <br><br><center><input type="submit" value = "Submit"/></center>
+        </form>
+        <!-- <h3>Drag and drop your site <br> output file here</h3>
+        <p>Or, <a href="{{url_for('upload')}}" class="upload-link">browse to upload.</a></p> -->
+
+    <h1>Drag & drop. It's online.</h1>
+    <p>Drop a file with your site's excel and csv files. <br> We'll give you a link to share it.</p>
+
+    <!-- <script>
+        const dropZone = document.querySelector('.drop-zone');
+        const uploadButton = document.querySelector('.upload-button');
+
+        // Event listeners for drag and drop
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            dropZone.addEventListener(eventName, (event) => {
+                event.preventDefault();
+                event.stopPropagation();
+
+                if (eventName === 'dragenter' || eventName === 'dragover') {
+                    dropZone.classList.add('active');
+                } else {
+                    dropZone.classList.remove('active');
+                }
+            });
+        });
+
+        // Handle dropped files
+        dropZone.addEventListener('drop', (event) => {
+            const files = event.dataTransfer.files;
+            // Handle file uploads
+        });
+
+        // Handle file selection from browse button
+        uploadButton.addEventListener('click', () => {
+            const fileInput = document.createElement('input');
+            fileInput.type = 'file';
+            fileInput.accept = '*/*';
+            fileInput.click();
+
+            fileInput.addEventListener('change', (event) => {
+                const files = event.target.files;
+                // Handle file uploads
+            });
+        });
+    </script> -->
+</body>
+</html>
