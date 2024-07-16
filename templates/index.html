@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bazzar Bandhu</title>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/style.css')}}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+
+  <body>
+    {% if success %}
+    <script>alert("You are successfully logged in")</script>
+    {% endif %}
+    <header class="header">
+      <nav>
+        <a href="{{url_for('index')}}"></a>
+        <div class="nav-links" id="navLinks">
+          <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
+          <ul>
+            <li>
+              <a href="{{url_for('index')}}">Home</a></li>
+              <li><a href="{{url_for('dashboard')}}">Dashboard</a></li>
+              <li><a href="{{url_for('upload')}}">Upload</a></li>
+              <li><a href="{{url_for('logout')}}">Logout</a></li>
+          </ul>
+        </div>
+        <i class="fa-solid fa-bars" onclick="showMenu()"></i>
+      </nav>
+      <!-- <div class="text-box"> -->
+        <!-- <h1>Learning Management System</h1> -->
+        <!-- <a href="{{url_for('signin')}}" class="hero-btn">Get Started</a> -->
+      <!-- </div> -->
+    </header>
+
+    <!-- -----Facilities-------->
+    <section class="campus">
+      <h1>Facilities</h1>
+
+      <div class="row">
+        <div class="campus-col">
+          <img src="{{url_for('static', filename = 'img/Facilities01.png')}}" />
+          <div class="layer">
+            <h3>Profits By Month</h3>
+          </div>
+        </div>
+        <div class="campus-col">
+          <img src="{{url_for('static', filename = 'img/Facilities02.png')}}" />
+          <div class="layer">
+            <h3>Sales by Month</h3>
+          </div>
+        </div>
+        <div class="campus-col">
+          <img src="{{url_for('static', filename = 'img/Facilities03.png')}}" />
+          <div class="layer">
+            <h3>Sales Forecasting</h3>
+          </div>
+        </div>
+           
+      </div>
+    </section>
+
+    <!-- -----Features-------- -->
+    <!-- <section class="campus">
+      <h1>Features</h1>
+
+      <div class="row">
+        <div class="campus-col">
+          <img src="UserRoleTypes fature05.png" />
+          <div class="layer">
+            <h3>User Role</h3>
+          </div>
+        </div>
+        <div class="campus-col">
+          <img src="feature06.jpg" />
+          <div class="layer">
+            <h3>Lms working</h3>
+          </div>
+        </div>
+        <div class="campus-col">
+          <img src="feature07.webp" />
+          <div class="layer">
+            <h3>Learning</h3>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+
+    <!-- ------- test imonials ------- -->
+    <section class="testimonials">
+      <h1>Our Team Members</h1>
+      <div class="row">
+        <div class="testimonials-col">
+          <img src="{{url_for('static', filename = 'img/user01.jpg')}}">
+          <div>
+            <h4>Dileep Kumar</h4>
+            <!-- <h5>ankit_2312res128@iitp.ac.in</h5>
+            <h5>2312res128</h5> -->
+            
+          </div>
+        </div>
+        <div class="testimonials-col">
+          <img src="{{url_for('static', filename = 'img/user02.jpg')}}">
+          <div>
+            <h4>Rishabh Goyal</h4>
+            <!-- <h5>abhijeet_2312res11@iitp.ac.in</h5>
+            <h5>2312res11</h5> -->
+            
+          </div>
+        </div>
+        <div class="testimonials-col">
+          <img src="{{url_for('static', filename = 'img/user03.jpg')}}">
+          <div>
+            <h4>Ashutosh Kumar</h4>
+            <!-- <h5>aditya_2312res778@iitp.ac.in</h5>
+            <h5>2312res778</h5> -->
+            
+          </div>
+        </div>
+        <div class="testimonials-col">
+          <img src="{{url_for('static', filename = 'img/user04.jpg')}}">
+          <div>
+            <h4>Muzaffar Kaif</h4>
+            <!-- <h5>kanhaiya_2312res321@iitp.ac.in</h5>
+            <h5>2312res321</h5> -->
+            
+          </div>
+        </div>
+        <div class="testimonials-col">
+          <img src="{{url_for('static', filename = 'img/user05.jpg')}}">
+          <div>
+            
+            <h3>Amar Kumar</h3>
+            <!-- <h5>bikesh_2312res221@iitp.ac.in</h5>
+            <h5>2312res221</h5>
+             -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---- call To Action ----- -->
+
+    <section class="cta">
+      <h1>Enroll For Our Various Online Courses <br>Anywhere From the World</h1>
+      <a href="Contact.html">CONTACT US</a>
+    </section>
+
+
+    <!-- ---- Footer ----- -->
+    <section class="Footer">
+      <h4>Follow US</h4>
+      
+      <div class="icon">
+        <a href="https://www.facebook.com/profile.php?id=100033742590471"><i class="fa-brands fa-facebook"></i></a>
+
+        <a href="https://x.com/KumarAmar28490"><i class="fa-brands fa-square-twitter"></i></a>
+
+        <a href="https://www.instagram.com/bazzarbandhu?igsh=MWo1M290bmpyNWxkMg=="><i class="fa-brands fa-instagram"></i></a>
+        
+        <a href="https://www.linkedin.com/in/amar-kumar-3800592a6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+      <p>Made by Bazzar Bandhu</i></p>
+    </section>
+
+    <!-- --- Javascript for toggle menu---- -->
+    <script>
+      var navLinks = document.getElementById("navLinks");
+      function showMenu() {
+        navLinks.style.right = "0";
+      }
+      function hideMenu() {
+        navLinks.style.right = "-200px";
+      }
+    </script>
+  </body>
+</html>
